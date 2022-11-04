@@ -1,0 +1,25 @@
+.custom-table {
+  &__pagination {
+    ul {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form-select {
+  width: 70px !important;
+}
+
+table {
+  font-size: 14px;
+  margin-top: 35px;
+}
+th, td:first-child {
+  background: #5c90bd !important;
+  color: white;
+}
+
+td {
+  background: #82a3c2 !important;
+}
+
