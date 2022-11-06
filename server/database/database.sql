@@ -1,4 +1,4 @@
-create or replace function getting_contents_receipt(_id integer)
+create or replace function getting_contents_receipt(id integer)
     returns TABLE
             (
                 "Drug"        character varying,
@@ -28,9 +28,31 @@ begin
                            JOIN "Test_NaklDataR" NaklDataR ON NaklDataR."NaklDataID" = NaklData."NaklDataID"
                            JOIN "Test_NaklTitleR" NaklTitleR ON NaklTitleR."NaklTitleRID" = NaklDataR."NaklTitleRID"
                   WHERE NaklDataR."Disable" = '0'
-                    AND NaklTitleR."Disable" = '0');
+                    AND NaklTitleR."Disable" = '0'
+                    AND NaklDataR."NaklTitleRID" = id);
 end;
 $$;
+
+
+CREATE FUNCTION test ()
+RETURN TABLE (
+    "lal" int
+)
+LANGUAGE plpgsql
+as 
+$$
+BEGIN
+RETURN QUERY (
+
+
+)
+end;
+$$;
+
+
+
+
+
 
 create function sales_list()
     returns TABLE
